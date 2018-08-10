@@ -9,7 +9,7 @@ public class Driver {
     private static WebDriver driverInstance;
 
     private static WebDriver initializeChrome() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\executables\\chromedriver.exe");
         driverInstance = new ChromeDriver();
         driverInstance.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driverInstance;
