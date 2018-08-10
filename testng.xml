@@ -4,7 +4,7 @@
         <parameter name="id" value="12345678"/>
         <parameter name="password" value="abcdefgh"/>
         <classes>
-            <class name="eurobankdemo.LoginPOTest"/>
+            <class name="eurobankdemo.testcases.LoginPOTest"/>
         </classes>
     </test>
     <test name="Money transfer">
@@ -12,7 +12,7 @@
         <parameter name="amount" value="100"/>
         <parameter name="title" value="Sample money transfer title."/>
         <classes>
-            <class name="eurobankdemo.MoneyTransferPOTest"/>
+            <class name="eurobankdemo.testcases.MoneyTransferPOTest"/>
         </classes>
     </test>
 </suite>
