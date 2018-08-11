@@ -1,0 +1,5 @@
+[0811/180617.293:ERROR:process_info.cc(329)] VirtualQueryEx: Odmowa dostêpu. (0x5)
+[0811/180617.295:ERROR:process_info.cc(550)] ReadMemoryInfo failed
+[0811/180617.300:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0811/180617.300:ERROR:exception_snapshot_win.cc(88)] thread ID 8408 not found in process
+[0811/180617.300:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)
