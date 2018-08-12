@@ -1,5 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="EurobankDemo Tests">
+<suite name="EurobankDemo Tests" preserve-order="true" thread-count="1">
+
     <test name="Login">
         <parameter name="id" value="12345678"/>
         <parameter name="password" value="abcdefgh"/>
@@ -7,6 +8,7 @@
             <class name="eurobankdemo.testcases.LoginPOTest"/>
         </classes>
     </test>
+
     <!--<test name="Money transfer">-->
         <!--<parameter name="recipient" value="Jan Nowak"/>-->
         <!--<parameter name="amount" value="100"/>-->

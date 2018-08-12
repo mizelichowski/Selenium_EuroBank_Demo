@@ -18,13 +18,25 @@ public class LoginPO extends BasePO {
     @FindBy(id = "login_next")
     private WebElement loginButton;
 
+    public WebElement getIdentityEditBox() {
+        return identityEditBox;
+    }
+
+    public WebElement getPasswordEditBox() {
+        return passwordEditBox;
+    }
+
+    public WebElement getLoginButton() {
+        return loginButton;
+    }
+
     public void enterId(String id) {
         identityEditBox.click();
         identityEditBox.clear();
         identityEditBox.sendKeys(id);
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_next")));
-        loginButton.click();
+//        loginButton.click();
     }
 
     public void enterPassword(String password) {
@@ -33,6 +45,6 @@ public class LoginPO extends BasePO {
         passwordEditBox.click();
         passwordEditBox.clear();
         passwordEditBox.sendKeys(password);
-        loginButton.click();
+//        loginButton.click();
     }
 }

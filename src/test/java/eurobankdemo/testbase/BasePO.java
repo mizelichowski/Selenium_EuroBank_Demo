@@ -27,9 +27,9 @@ public class BasePO {
     }
 
     public void initReports() {
-        System.setProperty("user.dir", "C:\\Users\\mizel\\Desktop\\Java Projects\\eurobankdemo\\src\\test\\resources\\reports\\ExtentReports.html");
-        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir"));
+        System.setProperty("user.dir", "src\\test\\resources\\reports\\ExtentReports.html");
         extent = new ExtentReports();
+        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir"));
         extent.attachReporter(htmlReporter);
         extent.setSystemInfo("Host Name", "Software Testing Material");
         extent.setSystemInfo("Environment", "Automation Testing");
@@ -50,6 +50,7 @@ public class BasePO {
 
     @AfterSuite
     public void tearDown() {
+        extent.flush();
         driver.quit();
     }
 }
