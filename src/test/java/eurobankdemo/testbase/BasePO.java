@@ -1,29 +1,21 @@
 package eurobankdemo.testbase;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import eurobankdemo.driver.Driver;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 public class BasePO {
     protected static WebDriver driver;
-    protected static Logger logger;
-    protected ExtentReports extent;
-    protected ExtentHtmlReporter htmlReporter;
-    protected ExtentTest report;
+    protected static ExtentReports extent;
+    protected static ExtentHtmlReporter htmlReporter;
 
     public void initDriver() {
         driver = Driver.getInstance();
-    }
-
-    public void initLogger() {
-        System.setProperty("LOG4J_CONFIGURATION_FILE", "log4j2.xml");
     }
 
     public void initReports() {
@@ -44,7 +36,6 @@ public class BasePO {
     @BeforeSuite
     public void startUp() {
         initDriver();
-        initLogger();
         initReports();
     }
 
