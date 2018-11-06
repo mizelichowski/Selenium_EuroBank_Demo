@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class Driver {
     private static WebDriver driverInstance;
 
-    private static WebDriver initializeChrome() {
+    private static WebDriver initializeFirefox() {
         System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\executables\\chromedriver.exe");
         driverInstance = new ChromeDriver();
         driverInstance.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -17,7 +17,7 @@ public class Driver {
 
     public static WebDriver getInstance() {
         if (driverInstance == null) {
-            driverInstance = initializeChrome();
+            driverInstance = initializeFirefox();
         }
         return driverInstance;
     }

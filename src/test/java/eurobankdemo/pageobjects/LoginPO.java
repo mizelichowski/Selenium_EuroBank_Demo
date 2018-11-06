@@ -1,5 +1,8 @@
 package eurobankdemo.pageobjects;
 
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import eurobankdemo.testbase.BasePO;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,7 +15,7 @@ public class LoginPO extends BasePO {
     @FindBy(id = "login_id")
     private static WebElement identityEditBox;
 
-    @FindBy(id = "login_password")
+    @FindBy(xpath = "//*[@id=\"login_password\"]")
     private static WebElement passwordEditBox;
 
     @FindBy(id = "login_next")
@@ -30,9 +33,10 @@ public class LoginPO extends BasePO {
         identityEditBox.click();
         identityEditBox.clear();
         identityEditBox.sendKeys(id);
+        test.log(Status.PASS, MarkupHelper.createLabel("Login entered successfully.", ExtentColor.GREEN));
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login_next")));
-//        loginButton.click();
+        loginButton.click();
     }
 
     public static void enterPassword(String password) {
@@ -41,7 +45,8 @@ public class LoginPO extends BasePO {
         passwordEditBox.click();
         passwordEditBox.clear();
         passwordEditBox.sendKeys(password);
-//        loginButton.click();
+        test.log(Status.PASS, MarkupHelper.createLabel("Password entered successfully.", ExtentColor.GREEN));
+        loginButton.click();
     }
 
     public static void clickLoginButton() {

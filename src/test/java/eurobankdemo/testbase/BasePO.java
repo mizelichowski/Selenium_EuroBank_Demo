@@ -1,6 +1,7 @@
 package eurobankdemo.testbase;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -13,13 +14,14 @@ public class BasePO {
     protected static WebDriver driver;
     protected static ExtentReports extent;
     protected static ExtentHtmlReporter htmlReporter;
+    protected static ExtentTest test;
 
     public void initDriver() {
         driver = Driver.getInstance();
     }
 
     public void initReports() {
-        System.setProperty("user.dir", "src\\test\\resources\\reports\\ExtentReports.html");
+        System.setProperty("user.dir", "src\\test\\resources\\reports\\00ExtentReports.html");
         extent = new ExtentReports();
         htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir"));
         extent.attachReporter(htmlReporter);
