@@ -5,6 +5,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ *  TO DO:
+ *  Support for the other browsers
+ */
+
 public class Driver {
     private static WebDriver driverInstance;
 
